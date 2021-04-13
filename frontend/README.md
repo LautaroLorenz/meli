@@ -16,3 +16,7 @@ Estructura de carpetas y explicación de su responsabilidad
   - Layout de componentes que renderizan según cambie la url
 - styles/
   - Estilos cross proyecto
+
+## favicon
+
+Para el favicon.ico se utilizó una versión de las imagenes creada usando como base el logo
