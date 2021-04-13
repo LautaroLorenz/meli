@@ -1,7 +1,7 @@
 import React from "react";
 import "./search-result.page.scss";
 import { Routing } from "../../core";
-import { Link } from "react-router-dom";
+import { SearchBarComponent } from '../../components';
 
 class SearchResultPage extends React.Component {
   constructor(props) {
@@ -15,12 +15,7 @@ class SearchResultPage extends React.Component {
   render() {
     return (
       <>
-        <div>Search Result "{this.state.search}"</div>
-        <p>
-          <Link to="/items/2">
-            <button>View Detail</button>
-          </Link>
-        </p>
+        <SearchBarComponent search={this.state.search} />
       </>
     );
   }

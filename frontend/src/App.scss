@@ -2,6 +2,7 @@
 
 .page-wrapper {
   height: 100vh;
-  overflow: auto;
-  background-color: $background-100;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $secondary-EEE;
 }

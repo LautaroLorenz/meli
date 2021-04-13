@@ -2,21 +2,46 @@
 @import 'media';
 
 .search-box {
-  background-color: $primary;
-  padding: 8px 0px;
+  display: inline-flex;
+  flex: 1;
+  position: relative;
 
-  @media (min-width: $screen-lg) {
-    .logo {
-      background-image: url('/assets/img/Logo_ML@2x.png');
-    }
+  .search-input {
+    background-color: $secondary-FFF;
+    color: $secondary-333;
+    border: 0 rgba($secondary-333,.2);
+    border-radius: 2px;
+    padding: 7px 60px 9px 15px;
+    font-size: 18px;
+    line-height: 1em;
+    width: 100%;
+    outline: 0;
   }
 
-  .logo {
-    display: block;
-    height: 36px;
-    overflow: hidden;
-    text-indent: -999px;
-    background-repeat: no-repeat;
-    background-image: url('/assets/img/Logo_ML.png');
+  .search-button {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    border: 0;
+    outline: 0;
+
+    .search-icon {
+      height: 18px;
+      width: 18px;
+      margin: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('/assets/img/ic_Search.png');
+    }
+
+    @media (min-width: $screen-lg) {
+      .search-icon {
+        background-image: url('/assets/img/ic_Search@2x.png');
+      }
+    }  
   }
 }

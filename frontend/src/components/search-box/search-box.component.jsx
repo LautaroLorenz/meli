@@ -1,21 +1,53 @@
 import React from "react";
 import "./search-box.component.scss";
-import { Row, Col } from 'react-flexbox-grid';
 
 class SearchBoxComponent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      maxlength: 120,
+      placeholder: 'Nunca dejes de buscar',
+      label: 'Ingresá lo que quieras encontrar',
+      value: props.value ?? ''
+    };
+  }
+
   render() {
     return (
-      <div className="search-box">
-        <Row>
-          <Col xs={0} sm={0} md={1} lg={1} ></Col>
-          <Col xs={12} sm={12} md={10} lg={10} >
-            <a className="logo" href="/">
-              Mercado Libre Argentina - Donde comprar y vender de todo
-            </a>
-          </Col>
-          <Col xs={0} sm={0} md={1} lg={1} ></Col>
-        </Row>
-      </div>
+      <form
+        className="search-box"
+        action="/items?search="
+        method="GET"
+        role="search">
+
+        <input
+          name="search"
+          type="search"
+          className="search-input"
+          aria-label={this.state.label}
+          placeholder={this.state.placeholder}
+          maxLength={this.state.maxlength}
+          defaultValue={this.state.value}
+          autoCapitalize="off"
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck="false"
+          tabIndex="1"
+          autoFocus />
+
+        <button
+          type="submit"
+          className="search-button"
+          tabIndex="2">
+          <div
+            className="search-icon"
+            role="img"
+            aria-label="Buscar"
+          ></div>
+        </button>
+
+      </form>
     );
   }
 }

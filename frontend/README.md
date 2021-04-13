@@ -21,7 +21,7 @@ Estructura de carpetas y explicación de su responsabilidad.
 - styles/
   - Estilos cross proyecto.
 
-## favicon
+## favicon.ico
 
 Para el favicon.ico se utilizó una versión de las imagenes creada usando como base el logo. La calidad de imagen resultante es obviamente baja.
 
@@ -29,3 +29,7 @@ Para el favicon.ico se utilizó una versión de las imagenes creada usando como 
 
 La carpeta **assets** se agrega en reemplazo del uso de **public**
 por los motivos mencionados en este hilo de Github [issues/9937](https://github.com/facebook/create-react-app/issues/9937)
+
+## Font size
+
+Se respetó la unidad **px** indicada en los Specs
