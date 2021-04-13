@@ -1,22 +1,30 @@
 # Front-End Test Práctico
 
-Solución de Front-End Test Práctico
+Solución de Front-End Test Práctico.
 
 ## Scaffolding
 
-Estructura de carpetas y explicación de su responsabilidad
+Estructura de carpetas y explicación de su responsabilidad.
 
 - api/
-  - Lógica de conexión con backend
+  - Lógica de conexión con backend.
+- assets/
+  - Imagenes, fuentes, iconos y demas elementos de soporte para el diseño.
 - components/
-  - Componentes reutilizables cross proyecto
+  - Componentes reutilizables cross proyecto.
 - core/
-  - Clases con lógica reutilizable
+  - Clases con lógica que no pertenece al negocio pero es reutilizable.
 - pages/
-  - Layout de componentes que renderizan según cambie la url
+  - Layout de componentes que renderizan según cambie la url.
+  - Encargados de manipular datos de negocio desde y hacia los componentes.
 - styles/
-  - Estilos cross proyecto
+  - Estilos cross proyecto.
 
 ## favicon
 
-Para el favicon.ico se utilizó una versión de las imagenes creada usando como base el logo
+Para el favicon.ico se utilizó una versión de las imagenes creada usando como base el logo. La calidad de imagen resultante es obviamente baja.
+
+## Public vs Assets
+
+La carpeta **assets** se agrega en reemplazo del uso de **public**
+por los motivos mencionados en este hilo de Github [issues/9937](https://github.com/facebook/create-react-app/issues/9937)
