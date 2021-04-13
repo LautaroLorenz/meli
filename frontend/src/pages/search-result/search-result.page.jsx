@@ -1,4 +1,5 @@
 import React from "react";
+import "./search-result.page.scss";
 import { Routing } from "../../core";
 import { Link } from "react-router-dom";
 

@@ -1,4 +1,5 @@
 import React from "react";
+import "./product-detail.page.scss";
 
 class ProductDetailPage extends React.Component {
   constructor(props) {

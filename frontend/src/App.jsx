@@ -5,11 +5,11 @@ import { ProductDetailPage, SearcherPage, SearchResultPage } from "./pages";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="page-wrapper">
         <Switch>
-          <Route exact path="/" component={SearcherPage}></Route>
-          <Route exact path="/items" component={SearchResultPage}></Route>
-          <Route path="/items/:id" component={ProductDetailPage}></Route>
+          <Route exact path="/" component={SearcherPage} />
+          <Route exact path="/items" component={SearchResultPage} />
+          <Route path="/items/:id" component={ProductDetailPage} />
         </Switch>
       </div>
     </Router>
