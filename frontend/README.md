@@ -7,12 +7,12 @@ Solución de Front-End Test Práctico
 Estructura de carpetas y explicación de su responsabilidad
 
 - api/
-  - lógica de conexión con backend
+  - Lógica de conexión con backend
 - components/
-  - componentes reutilizables cross proyecto
+  - Componentes reutilizables cross proyecto
 - core/
-  - clases con lógica reutilizable
+  - Clases con lógica reutilizable
 - pages/
-  - layout de componentes que renderizan según cambie la url
+  - Layout de componentes que renderizan según cambie la url
 - styles/
-  - archivos con estilos cross proyecto
+  - Estilos cross proyecto
