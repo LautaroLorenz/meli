@@ -12,6 +12,7 @@ Estructura de carpetas y explicación de su responsabilidad.
   - Imagenes, fuentes, iconos y demas elementos de soporte para el diseño.
 - components/
   - Componentes reutilizables cross proyecto.
+  - Dependencia mínima, solo saben mostrar información.
 - core/
   - Clases con lógica que no pertenece al negocio pero es reutilizable.
 - pages/
