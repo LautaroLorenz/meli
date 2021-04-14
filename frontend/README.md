@@ -33,3 +33,11 @@ por los motivos mencionados en este hilo de Github [issues/9937](https://github.
 ## Font size
 
 Se respetó la unidad **px** indicada en los Specs
+
+## Task
+
+- Multilenguaje
+- Test
+- Hooks (investigar)
+- UI/UX errors (eJemplo: search "asoigjsaoigjoiqwejgoiq")
+- Loaders

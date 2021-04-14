@@ -36,7 +36,7 @@ function mapSearch(meliSearchDto) {
 
   return {
     categories: getCategories(meliSearchDto),
-    items: results,
+    items: results.slice(0, 4),
   };
 }
 
@@ -52,6 +52,11 @@ function getCategories(meliSearchDto) {
 
   const available_filters = meliSearchDto.available_filters;
   const filterCategory = findFilter(available_filters, "category");
+
+  if (!filterCategory) {
+    return [];
+  }
+
   const sortedFilters = filterCategory.values.sort(categoryCompare);
 
   return sortedFilters.slice(0, 4).map(({ id, name }) => ({ id, name }));
