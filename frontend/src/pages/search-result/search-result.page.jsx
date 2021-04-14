@@ -14,16 +14,8 @@ class SearchResultPage extends React.Component {
   }
 
   componentDidMount() {
-    ItemsAPI.getItems(this.state.search).then((result) => {
-      console.log('search', this.state.search);
-      console.log('result', result);
-    }).catch(() => {
-      alert('Ups! falló la lectura de datos');
-    });
-
-    ItemsAPI.getItem(2).then((result) => {
-      console.log('ID', 2);
-      console.log('result', result);
+    ItemsAPI.getItems(this.state.search).then(({ data }) => {
+      console.log('data', data);
     }).catch(() => {
       alert('Ups! falló la lectura de datos');
     });
