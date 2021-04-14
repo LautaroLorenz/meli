@@ -2,7 +2,11 @@ import React from "react";
 import "./search-result.page.scss";
 import { Row, Col } from 'react-flexbox-grid';
 import { Routing } from "../../core";
-import { BreadcrumbComponent, SearchBarComponent } from '../../components';
+import {
+  BreadcrumbComponent,
+  SearchBarComponent,
+  ItemListComponent
+} from '../../components';
 import { ItemsAPI } from '../../api';
 
 class SearchResultPage extends React.Component {
@@ -45,11 +49,17 @@ class SearchResultPage extends React.Component {
           </Col>
           <Col xs={0} sm={0} md={1} lg={1} ></Col>
         </Row>
-        {this.state.items.length > 0 &&
-          <div className="items-list">
-            ITEMS
-          </div>
-        }
+        <Row>
+          <Col xs={0} sm={0} md={1} lg={1} ></Col>
+          <Col xs={12} sm={12} md={10} lg={10} >
+            <div className="item-list-wrapper">
+              {this.state.items.length > 0 &&
+                <ItemListComponent items={this.state.items} />
+              }
+            </div>
+          </Col>
+          <Col xs={0} sm={0} md={1} lg={1} ></Col>
+        </Row>
       </>
     );
   }

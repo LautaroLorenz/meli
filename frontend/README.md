@@ -41,3 +41,5 @@ Se respetó la unidad **px** indicada en los Specs
 - Hooks (investigar)
 - UI/UX errors (eJemplo: search "asoigjsaoigjoiqwejgoiq")
 - Loaders
+- SCSS (red and green global margin size)
+- Thumbnail (investigar SEO)
