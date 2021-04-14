@@ -1,0 +1,19 @@
+@import 'colors';
+
+.accent-button {
+  cursor: pointer;
+  background-color: $accent;
+  color: $secondary-FFF;
+  height: 32px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
