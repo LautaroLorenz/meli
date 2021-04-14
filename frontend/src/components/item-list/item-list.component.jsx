@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { generatePath } from "react-router";
 import "./item-list.component.scss";
-import { Price } from '../../components';
+import { PriceComponent } from '../../components';
 
 class ItemListComponent extends React.Component {
   constructor(props) {
@@ -50,7 +50,7 @@ function Item(props) {
       <div className="information">
         <div className="head">
           <div className="price">
-            <Price price={item.price} />
+            <PriceComponent price={item.price} />
             {item.free_shipping &&
               <div className="shipping"></div>}
           </div>

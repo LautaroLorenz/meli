@@ -1,11 +1,11 @@
 
 import {
-  AccentButton,
-  Price
+  AccentButtonComponent,
+  PriceComponent
 } from '../../components';
 import "./product-detail.component.scss";
 
-function ProductDetail(props) {
+function ProductDetailComponent(props) {
   const item = props.item;
   const condition = item.condition === 'new' ? 'Nuevo' : 'Usado';
   const condition_sold = condition.concat(' - ').concat(item.sold_quantity).concat(' vendidos');
@@ -26,9 +26,9 @@ function ProductDetail(props) {
           <div className="condition-sold">{condition_sold}</div>
           <div className="item-title">{item.title}</div>
           <div className="price">
-            <Price price={item.price} />
+            <PriceComponent price={item.price} />
           </div>
-          <AccentButton onClick={comprarAction}>Comprar</AccentButton>
+          <AccentButtonComponent onClick={comprarAction}>Comprar</AccentButtonComponent>
         </div>
       </div>
       <div className="description">
@@ -39,4 +39,4 @@ function ProductDetail(props) {
   )
 }
 
-export { ProductDetail };
+export { ProductDetailComponent };

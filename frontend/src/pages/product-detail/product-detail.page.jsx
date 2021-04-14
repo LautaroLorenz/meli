@@ -3,7 +3,7 @@ import "./product-detail.page.scss";
 import {
   BreadcrumbComponent,
   SearchBarComponent,
-  ProductDetail
+  ProductDetailComponent
 } from '../../components';
 import { Row, Col } from 'react-flexbox-grid';
 import { ItemsAPI } from '../../api';
@@ -53,7 +53,7 @@ class ProductDetailPage extends React.Component {
           <Col xs={12} sm={12} md={10} lg={10} >
             <div className="product-wrapper">
               {this.state.item &&
-                <ProductDetail item={this.state.item} />
+                <ProductDetailComponent item={this.state.item} />
               }
             </div>
           </Col>

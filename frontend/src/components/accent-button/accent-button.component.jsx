@@ -1,6 +1,6 @@
 import "./accent-button.component.scss";
 
-function AccentButton(props) {
+function AccentButtonComponent(props) {
   return (
     <button className="accent-button" onClick={props.onClick}>
       {props.children}
@@ -8,4 +8,4 @@ function AccentButton(props) {
   );
 }
 
-export { AccentButton };
+export { AccentButtonComponent };

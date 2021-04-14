@@ -1,7 +1,7 @@
 import NumberFormat from 'react-number-format';
 import "./price.component.scss";
 
-function Price(props) {
+function PriceComponent(props) {
   const price = props.price;
 
   return (
@@ -17,4 +17,4 @@ function Price(props) {
   )
 }
 
-export { Price }
+export { PriceComponent }
