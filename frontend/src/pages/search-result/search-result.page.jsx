@@ -1,7 +1,7 @@
 import React from "react";
 import "./search-result.page.scss";
 import { Routing } from "../../core";
-import { SearchBarComponent } from '../../components';
+import { BreadcrumbComponent, SearchBarComponent } from '../../components';
 import { ItemsAPI } from '../../api';
 
 class SearchResultPage extends React.Component {
@@ -9,13 +9,21 @@ class SearchResultPage extends React.Component {
     super(props);
 
     this.state = {
-      search: Routing.getQueryParam(this.props.location.search, "search")
+      search: Routing.getQueryParam(this.props.location.search, "search"),
+      categories: [],
+      items: []
     };
   }
 
   componentDidMount() {
     ItemsAPI.getItems(this.state.search).then(({ data }) => {
-      console.log('data', data);
+      if (!data) {
+        alert('Ups! no se encontraron resultados');
+        return;
+      }
+
+      const { categories, items } = data;
+      this.setState({ categories, items });
     }).catch(() => {
       alert('Ups! falló la lectura de datos');
     });
@@ -25,6 +33,7 @@ class SearchResultPage extends React.Component {
     return (
       <>
         <SearchBarComponent search={this.state.search} />
+        { this.state.categories.length > 0 && <BreadcrumbComponent categories={this.state.categories} />}
       </>
     );
   }
