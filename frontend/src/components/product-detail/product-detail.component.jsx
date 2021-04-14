@@ -32,8 +32,12 @@ function ProductDetailComponent(props) {
         </div>
       </div>
       <div className="description">
-        <div className="title">Descripción del producto</div>
-        <div className="text">{item.description}</div>
+        {item.description &&
+          <>
+            <div className="title">Descripción del producto</div>
+            <div className="text">{item.description}</div>
+          </>
+        }
       </div>
     </div>
   )

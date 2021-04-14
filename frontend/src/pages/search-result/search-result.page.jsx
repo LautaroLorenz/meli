@@ -5,7 +5,8 @@ import { Routing } from "../../core";
 import {
   BreadcrumbComponent,
   SearchBarComponent,
-  ItemListComponent
+  ItemListComponent,
+  LoaderComponent
 } from '../../components';
 import { ItemsAPI } from '../../api';
 
@@ -14,6 +15,7 @@ class SearchResultPage extends React.Component {
     super(props);
 
     this.state = {
+      loading: false,
       search: Routing.getQueryParam(this.props.location.search, "search"),
       categories: [],
       items: []
@@ -21,6 +23,7 @@ class SearchResultPage extends React.Component {
   }
 
   componentDidMount() {
+    this.setState({ loading: true });
     ItemsAPI.getItems(this.state.search).then(({ data }) => {
       if (!data || !data.items || !data.items.length) {
         alert('Ups! no se encontraron resultados');
@@ -31,13 +34,14 @@ class SearchResultPage extends React.Component {
       this.setState({ categories, items });
     }).catch(() => {
       alert('Ups! falló la lectura de datos');
-    });
+    }).finally(() => this.setState({ loading: false }));
   }
 
   render() {
     return (
       <>
         <SearchBarComponent search={this.state.search} />
+        {this.state.loading && <LoaderComponent />}
         <Row>
           <Col xs={0} sm={0} md={1} lg={1} ></Col>
           <Col xs={12} sm={12} md={10} lg={10} >
