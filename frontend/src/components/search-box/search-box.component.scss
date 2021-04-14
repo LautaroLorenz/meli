@@ -1,0 +1,47 @@
+@import 'colors';
+@import 'media';
+
+.search-box {
+  display: inline-flex;
+  flex: 1;
+  position: relative;
+
+  .search-input {
+    background-color: $secondary-FFF;
+    color: $secondary-333;
+    border: 0 rgba($secondary-333,.2);
+    border-radius: 2px;
+    padding: 7px 60px 9px 15px;
+    font-size: 18px;
+    line-height: 1em;
+    width: 100%;
+    outline: 0;
+  }
+
+  .search-button {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    border: 0;
+    outline: 0;
+
+    .search-icon {
+      height: 18px;
+      width: 18px;
+      margin: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('/assets/img/ic_Search.png');
+    }
+
+    @media (min-width: $screen-lg) {
+      .search-icon {
+        background-image: url('/assets/img/ic_Search@2x.png');
+      }
+    }  
+  }
+}

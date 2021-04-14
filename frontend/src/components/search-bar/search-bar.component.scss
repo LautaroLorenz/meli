@@ -1,0 +1,30 @@
+@import 'colors';
+@import 'media';
+
+.search-bar {
+  background-color: $primary;
+  padding: 8px 0px;
+
+  .logo-wrapper {
+    display: flex;
+
+    .logo {
+      display: block;
+      height: 36px;
+      width: 53px;
+      overflow: hidden;
+      text-indent: -999px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('/assets/img/Logo_ML.png');
+      margin-right: 8px;
+    }
+
+    @media (min-width: $screen-lg) {
+      .logo {
+        background-image: url('/assets/img/Logo_ML@2x.png');
+        margin-right: 24px;
+      }
+    }
+  }
+}
