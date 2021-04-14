@@ -5,6 +5,7 @@ import {ItemListComponent} from './item-list/item-list.component';
 import {AccentButton} from './accent-button/accent-button.component';
 import {ProductDetail} from './product-detail/product-detail.component';
 import {Price} from './price/price.component';
+import {LoaderComponent} from './loader/loader.component';
 
 export {
   SearchBarComponent, 
@@ -13,5 +14,6 @@ export {
   ItemListComponent,
   AccentButton,
   ProductDetail,
-  Price
+  Price,
+  LoaderComponent
 }

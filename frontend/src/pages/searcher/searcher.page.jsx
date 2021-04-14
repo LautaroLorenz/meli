@@ -4,7 +4,11 @@ import { SearchBarComponent } from '../../components';
 
 class SearcherPage extends React.Component {
   render() {
-    return <SearchBarComponent></SearchBarComponent>;
+    return (
+      <>
+        <SearchBarComponent />
+      </>
+    );
   }
 }
 
