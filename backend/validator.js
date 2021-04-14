@@ -13,6 +13,7 @@ const validHeaders = (req, res, next) => {
   next();
 };
 
-const hasParam = (req, paramName) => !!req.query[paramName];
+const hasQueryParam = (req, paramName) => !!req.query[paramName];
+const hasParam = (req, paramName) => !!req.params[paramName];
 
-module.exports = { validHeaders, hasParam };
+module.exports = { validHeaders, hasQueryParam, hasParam };

@@ -3,6 +3,7 @@ import "./product-detail.page.scss";
 import {
   SearchBarComponent
 } from '../../components';
+import { ItemsAPI } from '../../api';
 
 class ProductDetailPage extends React.Component {
   constructor(props) {
@@ -11,6 +12,19 @@ class ProductDetailPage extends React.Component {
     this.state = {
       id: props.match.params.id
     };
+  }
+
+  componentDidMount() {
+    ItemsAPI.getItem(this.state.id).then(({ data }) => {
+      if (!data || !data.item) {
+        alert('Ups! no se encontraron resultados');
+        return;
+      }
+
+      console.log(data);
+    }).catch(() => {
+      alert('Ups! falló la lectura de datos');
+    });
   }
 
   render() {

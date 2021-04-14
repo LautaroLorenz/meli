@@ -44,7 +44,7 @@ function Item(props) {
     <div className="item" onClick={handleClick}>
       <div className="thumbnail">
         <img
-          src={item.thumbnail}
+          src={item.picture}
           alt={item.title} />
       </div>
       <div className="information">
@@ -52,17 +52,17 @@ function Item(props) {
           <div className="price">
             <NumberFormat
               className="value"
-              value={item.price}
+              value={item.price.amount}
               displayType={'text'}
               thousandSeparator={'.'}
               decimalSeparator={','}
               prefix={'$ '}
             />
-            {item.shipping.free_shipping &&
+            {item.free_shipping &&
               <div className="shipping"></div>}
           </div>
           <div className="location">
-            {item.address.state_name}
+            {item.state_name}
           </div>
         </div>
         <div className="description">
