@@ -9,6 +9,7 @@
     background-color: $secondary-FFF;
     position: relative;
     cursor: pointer;
+    transition: opacity 350ms ease-in-out;
 
     &:first-child {
       border-top-left-radius: 4px;
@@ -18,6 +19,10 @@
     &:last-child {
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
+    }
+
+    &:hover {
+      opacity: 0.7;
     }
 
     .thumbnail {
@@ -51,10 +56,6 @@
           align-items: center;
           font-size: 24px;
           flex: 1 1 75%;
-
-          .value {
-            white-space: nowrap;
-          }
 
           .shipping {
             display: inline-block;

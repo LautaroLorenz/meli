@@ -1,8 +1,8 @@
 import React from "react";
-import NumberFormat from 'react-number-format';
 import { useHistory } from "react-router-dom";
 import { generatePath } from "react-router";
 import "./item-list.component.scss";
+import { Price } from '../../components';
 
 class ItemListComponent extends React.Component {
   constructor(props) {
@@ -50,14 +50,7 @@ function Item(props) {
       <div className="information">
         <div className="head">
           <div className="price">
-            <NumberFormat
-              className="value"
-              value={item.price.amount}
-              displayType={'text'}
-              thousandSeparator={'.'}
-              decimalSeparator={','}
-              prefix={'$ '}
-            />
+            <Price price={item.price} />
             {item.free_shipping &&
               <div className="shipping"></div>}
           </div>
