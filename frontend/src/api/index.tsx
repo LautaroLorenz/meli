@@ -1,3 +1,3 @@
-import ItemsApi from './items.api';
+import ItemsAPI from './items.api';
 
-export {ItemsApi};
+export {ItemsAPI};
