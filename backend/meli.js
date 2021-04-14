@@ -17,4 +17,8 @@ const getItemDescription = async (id) => {
   );
 };
 
-module.exports = { getSearch, getItem, getItemDescription };
+const getItemCategory = async (id) => {
+  return await axios.get(BASE_URL.concat("categories/").concat(id));
+};
+
+module.exports = { getSearch, getItem, getItemDescription, getItemCategory };

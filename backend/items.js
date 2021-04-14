@@ -13,9 +13,15 @@ router.get("/:id", async (req, res) => {
     const itemDto = await axios
       .all([meliAPI.getItem(id), meliAPI.getItemDescription(id)])
       .then(
-        axios.spread((...responses) => {
+        axios.spread(async (...responses) => {
           const meliItemDto = responses[0].data;
           const { sold_quantity } = meliItemDto;
+
+          // se agrega al dto para mostrar el bradcrumb del ítem
+          const meliItemCategoryDto = await meliAPI.getItemCategory(
+            meliItemDto.category_id
+          );
+          const categories = meliItemCategoryDto.data.path_from_root;
 
           const item = {
             ...mapItem(meliItemDto),
@@ -23,7 +29,10 @@ router.get("/:id", async (req, res) => {
             description: responses[1].data.plain_text,
           };
 
-          return { item };
+          return {
+            item,
+            categories,
+          };
         })
       );
 
