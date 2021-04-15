@@ -11,7 +11,7 @@ Solución FE-BE para buscador.
 
 - backend/
   - Leer el archivo README.md que contiene dentro.
-  - Iniciar con `node index.js`
+  - Iniciar con el comando `node index.js`
 - frontend/
   - Leer el archivo README.md que contiene dentro.
-  - Iniciar con `npm start`
+  - Iniciar con el comando `npm start`
