@@ -1,6 +1,14 @@
-# Front-End Test Práctico
+# Cliente
 
 Solución de Front-End Test Práctico.
+
+## Stack tecnológico
+
+Hecho en React
+
+## Puesta en marcha
+
+Iniciar con `npm start`
 
 ## Scaffolding
 
@@ -36,10 +44,12 @@ Se respetó la unidad **px** indicada en los Specs
 
 ## Task
 
+Listado de tareas pendientes:
+
 - [ ] Multilenguaje
 - [ ] Test
 - [ ] Hooks (investigar)
 - [ ] UI/UX errors (eJemplo: search "asoigjsaoigjoiqwejgoiq")
-- [ ] Loaders
+- [x] Loaders
 - [ ] SCSS (red and green global margin size)
 - [ ] Thumbnail (investigar SEO)
