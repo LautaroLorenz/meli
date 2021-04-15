@@ -8,6 +8,7 @@ Hecho en React
 
 ## Puesta en marcha
 
+El repositorio NO incluye dependencias, **ejecutar** `npm install`.
 Iniciar con `npm start`
 
 ## Scaffolding

@@ -8,6 +8,7 @@ Hecho en NodeJs y express.
 
 ## Puesta en marcha
 
+El repositorio incluye dependencias (**no necesita** `npm install`).
 Iniciar con `node index.js`
 
 ## Scaffolding
