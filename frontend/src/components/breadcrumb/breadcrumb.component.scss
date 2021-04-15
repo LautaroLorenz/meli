@@ -1,0 +1,15 @@
+@import 'colors';
+
+.breadcrumb {
+  color: $secondary-666;
+
+  .separator {
+    display: inline-flex;
+    margin: 0px 8px;
+  }
+  
+  .accent-category {
+    color: $secondary-999;
+    font-weight: bold;
+  }
+}

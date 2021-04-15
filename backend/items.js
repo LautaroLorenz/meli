@@ -1,3 +1,4 @@
+const axios = require("axios");
 const express = require("express");
 const check = require("./validator");
 const meliAPI = require("./meli");
@@ -5,8 +6,44 @@ const router = express.Router();
 
 router.use(check.validHeaders);
 
+router.get("/:id", async (req, res) => {
+  if (check.hasParam(req, "id")) {
+    const id = req.params.id;
+
+    const itemDto = await axios
+      .all([meliAPI.getItem(id), meliAPI.getItemDescription(id)])
+      .then(
+        axios.spread(async (...responses) => {
+          const meliItemDto = responses[0].data;
+          const { sold_quantity } = meliItemDto;
+
+          // se agrega al dto para mostrar el bradcrumb del ítem
+          const meliItemCategoryDto = await meliAPI.getItemCategory(
+            meliItemDto.category_id
+          );
+          const categories = meliItemCategoryDto.data.path_from_root;
+
+          const item = {
+            ...mapItem(meliItemDto),
+            sold_quantity,
+            description: responses[1].data.plain_text,
+          };
+
+          return {
+            item,
+            categories,
+          };
+        })
+      );
+
+    return res.send(itemDto);
+  }
+
+  res.send();
+});
+
 router.get("/", async (req, res) => {
-  if (check.hasParam(req, "q")) {
+  if (check.hasQueryParam(req, "q")) {
     const search = req.query.q;
 
     const { data } = await meliAPI.getSearch(search).catch(() => {
@@ -19,13 +56,31 @@ router.get("/", async (req, res) => {
   res.send();
 });
 
-router.get("/:id", function (req, res) {
-  const item = {};
-
-  res.send(item);
-});
-
 module.exports = router;
+
+function mapItem(meliItemDto) {
+  const { id, title, condition, currency_id, price, shipping } = meliItemDto;
+
+  let picture;
+  if (meliItemDto.pictures) {
+    picture = meliItemDto.pictures[0].secure_url;
+  } else {
+    picture = meliItemDto.thumbnail;
+  }
+
+  return {
+    id,
+    title,
+    price: {
+      currency: currency_id,
+      amount: price,
+      decimals: 0, // consultar donde llega
+    },
+    picture,
+    condition,
+    free_shipping: shipping.free_shipping,
+  };
+}
 
 function mapSearch(meliSearchDto) {
   const results = meliSearchDto.results;
@@ -36,7 +91,10 @@ function mapSearch(meliSearchDto) {
 
   return {
     categories: getCategories(meliSearchDto),
-    items: results,
+    items: results.slice(0, 4).map((item) => ({
+      ...mapItem(item),
+      state_name: item.address.state_name, // para cumplir mock
+    })),
   };
 }
 
@@ -52,6 +110,11 @@ function getCategories(meliSearchDto) {
 
   const available_filters = meliSearchDto.available_filters;
   const filterCategory = findFilter(available_filters, "category");
+
+  if (!filterCategory) {
+    return [];
+  }
+
   const sortedFilters = filterCategory.values.sort(categoryCompare);
 
   return sortedFilters.slice(0, 4).map(({ id, name }) => ({ id, name }));

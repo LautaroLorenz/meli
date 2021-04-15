@@ -7,4 +7,18 @@ const getSearch = async (search) => {
   });
 };
 
-module.exports = { getSearch };
+const getItem = async (id) => {
+  return await axios.get(BASE_URL.concat("items/").concat(id));
+};
+
+const getItemDescription = async (id) => {
+  return await axios.get(
+    BASE_URL.concat("items/").concat(id).concat("/description")
+  );
+};
+
+const getItemCategory = async (id) => {
+  return await axios.get(BASE_URL.concat("categories/").concat(id));
+};
+
+module.exports = { getSearch, getItem, getItemDescription, getItemCategory };

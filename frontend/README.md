@@ -1,6 +1,14 @@
-# Front-End Test Práctico
+# Cliente
 
 Solución de Front-End Test Práctico.
+
+## Stack tecnológico
+
+Hecho en React
+
+## Puesta en marcha
+
+Iniciar con `npm start`
 
 ## Scaffolding
 
@@ -33,3 +41,15 @@ por los motivos mencionados en este hilo de Github [issues/9937](https://github.
 ## Font size
 
 Se respetó la unidad **px** indicada en los Specs
+
+## Task
+
+Listado de tareas pendientes:
+
+- [ ] Multilenguaje
+- [ ] Test
+- [ ] Hooks (investigar)
+- [ ] UI/UX errors (eJemplo: search "asoigjsaoigjoiqwejgoiq")
+- [x] Loaders
+- [ ] SCSS (red and green global margin size)
+- [ ] Thumbnail (investigar SEO)
