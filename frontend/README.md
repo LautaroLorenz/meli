@@ -51,6 +51,6 @@ Listado de tareas pendientes:
 - [ ] Test
 - [ ] Hooks (investigar)
 - [ ] UI/UX errors (eJemplo: search "asoigjsaoigjoiqwejgoiq")
-- [x] Loaders
+- [x] ~~Loaders~~
 - [ ] SCSS (red and green global margin size)
 - [ ] Thumbnail (investigar SEO)
